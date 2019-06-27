@@ -53,11 +53,24 @@ Route::prefix('admin')->group(function (){
     Route::post('register','AdminController@store')->name('admin.register.store');
 
     /**
+     * METHOD : GET
+     * URL authen.com/admin/login
      * Route trả về view đăng nhập admin
      */
+    Route::get('login','Auth\Admin\LoginController@login')->name('admin.auth.login');
+
     /**
+     * METHOD : POST
      * Route xử lý quá trình đăng nhập admin
-     *
+     * URL authen.com/admin/login
+     */
+    Route::post('login','Auth\Admin\LoginController@loginAdmin')->name('admin.auth.loginAdmin');
+
+    /**
+     * METHOD : POST
+     * URL authen.com/admin/logout
+     * ROute xử lú quá trình đăng xuất ADmin
      */
 
+    Route::post('logout','Auth\Admin\LoginController@logout')->name('admin.auth.logout');
 });
