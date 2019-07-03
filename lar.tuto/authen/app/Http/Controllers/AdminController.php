@@ -9,6 +9,22 @@ use Illuminate\Http\Request;
 class AdminController extends Controller
 {
     /**
+     * Hàm khởi tạo của class được chạy ngay khi khởi tạo đối tượng
+     * Hàm này luôn được chạy trước các hàm khác trong class
+     * AdminController constructor.
+     */
+    public  function __construct()
+    {
+        /**
+         * truyền vào goute là admin
+        * tương tự như middleware của khách hàng trong file homecontroller
+         * nhưng có phương thức cụ thể là admin
+         * chỉ xác thực với index
+         */
+        $this->middleware('auth:admin')-> only('index');
+    }
+
+    /**
      * Phương thức trả về view khi đăng nhập admin thành công
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
@@ -43,7 +59,8 @@ class AdminController extends Controller
         $adminModel->save();
 
         //@todo
-        return redirect()->route();
+        // sau khi đăng ký thành công tạo xong dữ liệu sẽ redirect về route đăng nhập
+        return redirect()->route('admin.auth.login');
 
     }
 }

@@ -8,7 +8,8 @@ class HomeController extends Controller
 {
     /**
      * Create a new controller instance.
-     *
+     * Phần này dành cho khách hàng
+     * Muốn vào trang thì phải qua cái midddlewarre là auth
      * @return void
      */
     public function __construct()
