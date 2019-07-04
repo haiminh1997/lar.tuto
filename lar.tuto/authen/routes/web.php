@@ -121,7 +121,7 @@ Route::prefix('seller')->group( function (){
      * Route xử lý quá trình đăng nhập seller
      * URL authen.com/seller/login
      */
-    Route::post('login','Auth\Seller\LoginController@loginSeller')->name('seller.auth.loginAdmin');
+    Route::post('login','Auth\Seller\LoginController@loginSeller')->name('seller.auth.loginSeller');
 
     /**
      * METHOD : POST
