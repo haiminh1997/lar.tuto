@@ -79,6 +79,13 @@ class Handler extends ExceptionHandler
                 $login = 'seller.auth.login';
                 break;
             /**
+             * Khi xảy ra lỗi
+             * Nếu là shipper thì trả về trang đăng nhập của shipper
+             */
+            case 'shipper':
+                $login = 'shipper.auth.login';
+                break;
+            /**
              * Nếu k phải admin thì trả về trang đăng nhập user khách hàng
              */
             default:
