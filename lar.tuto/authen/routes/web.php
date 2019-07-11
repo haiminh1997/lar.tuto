@@ -184,5 +184,5 @@ Route::prefix('shipper')->group( function (){
      * ROute xử lú quá trình đăng xuất shipper
      */
 
-    Route::post('logout','Auth\Shipper\LoginController@logout')->name('seller.auth.logout');
+    Route::post('logout','Auth\Shipper\LoginController@logout')->name('shipper.auth.logout');
 });
